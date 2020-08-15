@@ -9,7 +9,8 @@ io.on('connection', client => {
             client.to(data.room).emit("hello", {
                 id: client.id,
                 name: data.name,
-                platform: data.platform
+                platform: data.platform,
+                key: data.key
             })
         }
     })
@@ -20,7 +21,8 @@ io.on('connection', client => {
                 id: data.source,
                 name: data.name,
                 platform: data.platform,
-                acceptedByPartner: true
+                acceptedByPartner: true,
+                key: data.key
             })
         }
     })
